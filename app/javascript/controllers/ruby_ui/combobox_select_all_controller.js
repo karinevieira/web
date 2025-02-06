@@ -8,27 +8,20 @@ export default class extends Controller {
   ]
 
   connect() {
-    if (this.hasChildTarget) {
-      this.childTargets.map(x => x.checked = false)
-    }
-    if (this.hasParentTarget) {
-      this.parentTarget.checked = false
-    }
+    this.#uncheckAllTargets()
   }
 
   toggleChilden() {
-    if (this.parentTarget.checked) {
-      this.childTargets.map(x => x.checked = true)
-    } else {
-      this.childTargets.map(x => x.checked = false)
-    }
+    const isChecked = this.parentTarget.checked;
+    this.childTargets.forEach(child => child.checked = isChecked);
   }
 
   toggleParent() {
-    if (this.childTargets.map(x => x.checked).includes(false)) {
-      this.parentTarget.checked = false
-    } else {
-      this.parentTarget.checked = true
-    }
+    this.parentTarget.checked = !this.childTargets.some(child => !child.checked);
+  }
+
+  #uncheckAllTargets() {
+    this.childTargets.forEach(child => child.checked = false)
+    if (this.hasParentTarget) this.parentTarget.checked = false
   }
 }
