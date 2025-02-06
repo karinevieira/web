@@ -9,6 +9,8 @@ export default class extends Controller {
 
   static targets = [
     "input",
+    "parent",
+    "child",
     "popover",
     "item",
     "emptyState",
@@ -20,6 +22,7 @@ export default class extends Controller {
   selectedItemIndex = null
 
   connect() {
+    this.#uncheckAllInputs()
     this.updateTriggerContent()
   }
 
@@ -37,6 +40,17 @@ export default class extends Controller {
 
   inputContent(input) {
     return input.dataset.text || input.parentElement.innerText
+  }
+
+  toggleChilden() {
+    const isChecked = this.parentTarget.checked
+    this.childTargets.forEach(child => child.checked = isChecked)
+    this.updateTriggerContent()
+  }
+
+  toggleParent() {
+    this.parentTarget.checked = !this.childTargets.some(child => !child.checked)
+    this.updateTriggerContent()
   }
 
   updateTriggerContent() {
@@ -155,5 +169,10 @@ export default class extends Controller {
 
   updatePopoverWidth() {
     this.popoverTarget.style.width = `${this.triggerTarget.offsetWidth}px`
+  }
+
+  #uncheckAllInputs() {
+    this.childTargets.forEach(child => child.checked = false)
+    if (this.hasParentTarget) this.parentTarget.checked = false
   }
 }

@@ -17,7 +17,7 @@ module RubyUI
       {
         role: "combobox",
         data: {
-          controller: "ruby-ui--combobox ruby-ui--combobox-select-all",
+          controller: "ruby-ui--combobox",
           ruby_ui__combobox_term_value: @term.to_s
         }
       }

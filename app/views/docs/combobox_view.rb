@@ -81,8 +81,8 @@ class Docs::ComboboxView < ApplicationView
                       name: "all",
                       value: "all",
                       data: {
-                        ruby_ui__combobox_select_all_target: "parent",
-                        action: "change->ruby-ui--combobox-select-all#toggleChilden"
+                        ruby_ui__combobox_target: "parent",
+                        action: "change->ruby-ui--combobox#toggleChilden"
                       }
                     )
                     span { "Select all" }
@@ -94,8 +94,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "apple",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Apple" }
@@ -106,8 +106,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "banana",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Banana" }
@@ -120,8 +120,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "brocoli",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Broccoli" }
@@ -132,8 +132,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "carrot",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Carrot" }
@@ -146,8 +146,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "chocolate",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Chocolate" }
@@ -158,8 +158,8 @@ class Docs::ComboboxView < ApplicationView
                         name: "food",
                         value: "milk",
                         data: {
-                          ruby_ui__combobox_select_all_target: "child",
-                          action: "change->combobox-select-all#toggleParent"
+                          ruby_ui__combobox_target: "child",
+                          action: "change->combobox#toggleParent"
                         }
                       )
                       span { "Milk" }
