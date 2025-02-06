@@ -76,16 +76,18 @@ class Docs::ComboboxView < ApplicationView
                 ComboboxList do
                   ComboboxEmptyState { "No result" }
 
-                  ComboboxItem do
-                    ComboboxCheckbox(
-                      name: "all",
-                      value: "all",
-                      data: {
-                        ruby_ui__combobox_target: "parent",
-                        action: "change->ruby-ui--combobox#toggleChilden"
-                      }
-                    )
-                    span { "Select all" }
+                  ComboboxListGroup label: "All" do
+                    ComboboxItem do
+                      ComboboxCheckbox(
+                        name: "all",
+                        value: "all",
+                        data: {
+                          ruby_ui__combobox_target: "parent",
+                          action: "change->ruby-ui--combobox#toggleChilden"
+                        }
+                      )
+                      span { "Select all" }
+                    end
                   end
 
                   ComboboxListGroup label: "Fruits" do
