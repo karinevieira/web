@@ -31,6 +31,9 @@ application.register("ruby-ui--collapsible", RubyUi__CollapsibleController)
 import RubyUi__ComboboxController from "./ruby_ui/combobox_controller"
 application.register("ruby-ui--combobox", RubyUi__ComboboxController)
 
+import RubyUi__ComboboxSelectAllController from "./ruby_ui/combobox_select_all_controller"
+application.register("ruby-ui--combobox-select-all", RubyUi__ComboboxSelectAllController)
+
 import RubyUi__CommandController from "./ruby_ui/command_controller"
 application.register("ruby-ui--command", RubyUi__CommandController)
 

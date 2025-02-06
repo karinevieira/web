@@ -76,38 +76,92 @@ class Docs::ComboboxView < ApplicationView
                 ComboboxList do
                   ComboboxEmptyState { "No result" }
 
+                  ComboboxItem do
+                    ComboboxCheckbox(
+                      name: "all",
+                      value: "all",
+                      data: {
+                        ruby_ui__combobox_select_all_target: "parent",
+                        action: "change->ruby-ui--combobox-select-all#toggleChilden"
+                      }
+                    )
+                    span { "Select all" }
+                  end
+
                   ComboboxListGroup label: "Fruits" do
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "apple")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "apple",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Apple" }
                     end
 
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "banana")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "banana",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Banana" }
                     end
                   end
 
                   ComboboxListGroup label: "Vegetable" do
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "brocoli")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "brocoli",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Broccoli" }
                     end
 
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "carrot")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "carrot",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Carrot" }
                     end
                   end
 
                   ComboboxListGroup label: "Others" do
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "chocolate")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "chocolate",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Chocolate" }
                     end
 
                     ComboboxItem do
-                      ComboboxCheckbox(name: "food", value: "milk")
+                      ComboboxCheckbox(
+                        name: "food",
+                        value: "milk",
+                        data: {
+                          ruby_ui__combobox_select_all_target: "child",
+                          action: "change->combobox-select-all#toggleParent"
+                        }
+                      )
                       span { "Milk" }
                     end
                   end
